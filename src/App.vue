@@ -1,32 +1,55 @@
+<script setup>
+import MyBar from './components/MyBar.vue'
+import MyCard from './components/MyCard.vue'
+
+</script>
+
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+  <header>
+    <MyBar />
+  </header>
+
+  <main>
+    <h1 style="padding-left: 10px">Review</h1>
+    <div className="gird-container">
+      <MyCard />
+      <MyCard />
+      <MyCard />
+      <MyCard />
+    </div>
+    </main>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default ({
+  data () {
+    return {
+      item: []
+    }
+  },
 
-nav {
-  padding: 30px;
-}
+  created () {
+    .then((result) => {
+      this.items = result
+    })
+    
+  }
+})
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+}
+@media (min-width: 576px) {
+  .grid-container { grid-template-columns: repeat(1, 1fr); }
+}
+@media (min-width: 992px) {
+  .grid-container { grid-template-columns: repeat(3, 1fr); }
 }
 </style>
