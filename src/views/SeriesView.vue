@@ -2,17 +2,17 @@
 <v-container>
   <v-row>
     <v-col cols="12">
-      <HomeForm/>
+      <RestaurantView/>
     </v-col>
   </v-row>
 </v-container>
 </template>
 
 <script>
-import HomeForm from '../components/Home.vue'
+import RestaurantView from '../components/Series.vue'
 export default {
   components: {
-    HomeForm
+    RestaurantView
   }
 }
 </script>

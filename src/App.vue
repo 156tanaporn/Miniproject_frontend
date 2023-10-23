@@ -1,55 +1,69 @@
-<script setup>
-import MyBar from './components/MyBar.vue'
-import MyCard from './components/MyCard.vue'
-
-</script>
-
 <template>
-  <div>
-  <header>
-    <MyBar />
-  </header>
+  <v-app>
+    <v-app-bar
+      app
+      dark
+      color="blue"
+    >
+      <div class="d-flex align-center">
+        <span class="mr-2" style="font-size: 20px;">Review Series </span>
 
-  <main>
-    <h1 style="padding-left: 10px">Review</h1>
-    <div className="gird-container">
-      <MyCard />
-      <MyCard />
-      <MyCard />
-      <MyCard />
-    </div>
-    </main>
-  </div>
+
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        text
+        @click="goToHome()"
+      >
+        <span class="mr-2">Home</span>
+
+      </v-btn>
+
+      <v-btn
+        text
+        @click="goToRegister()"
+      >
+        <span class="mr-2">Register</span>
+
+      </v-btn>
+
+      <v-btn
+        text
+        @click="goToLogin()"
+      >
+        <span class="mr-2">Login</span>
+
+      </v-btn>
+
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-export default ({
-  data () {
-    return {
-      item: []
+
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+  methods: {
+    goToLogin () {
+      this.$router.push({ path: '/login' }).catch(() => {})
+    },
+    goToHome () {
+      this.$router.push({ path: '/' }).catch(() => {})
+    },
+    goToRegister () {
+      this.$router.push({ path: '/register' }).catch(() => {})
     }
-  },
-
-  created () {
-    .then((result) => {
-      this.items = result
-    })
-    
   }
-})
+
+}
 </script>
-
-
-<style scoped>
-.grid-container {
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
-}
-@media (min-width: 576px) {
-  .grid-container { grid-template-columns: repeat(1, 1fr); }
-}
-@media (min-width: 992px) {
-  .grid-container { grid-template-columns: repeat(3, 1fr); }
-}
-</style>

@@ -2,17 +2,17 @@
 <v-container>
   <v-row>
     <v-col cols="12">
-      <HomeForm/>
+      <RegisterView/>
     </v-col>
   </v-row>
 </v-container>
 </template>
 
 <script>
-import HomeForm from '../components/Home.vue'
+import RegisterView from '../components/Register.vue'
 export default {
   components: {
-    HomeForm
+    RegisterView
   }
 }
 </script>
