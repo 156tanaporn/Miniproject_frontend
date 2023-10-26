@@ -7,8 +7,6 @@
     >
       <div class="d-flex align-center">
         <span class="mr-2" style="font-size: 20px;">Review Series </span>
-
-
       </div>
 
       <v-spacer></v-spacer>
@@ -37,6 +35,14 @@
 
       </v-btn>
 
+      <v-btn
+        text
+        @click="goToTable()"
+      >
+        <span class="mr-2">Series</span>
+
+      </v-btn>
+
     </v-app-bar>
 
     <v-main>
@@ -62,7 +68,11 @@ export default {
     },
     goToRegister () {
       this.$router.push({ path: '/register' }).catch(() => {})
+    },
+    goToTable () {
+      this.$router.push({ path: '/table' }).catch(() => {})
     }
+
   }
 
 }

@@ -8,11 +8,10 @@
           </v-card-title>
           <v-card-text>
             <v-form @submit="submitReservation">
-              <v-text-field v-model="name" label="Username" required></v-text-field>
-              <v-date-picker v-model="date" label="Review Date" required></v-date-picker>
-              <v-textarea v-model="specialRequests" label="comment"></v-textarea>
+              <v-textarea v-model="comment" label="comment"></v-textarea>
               <v-btn color="primary" type="submit">Submit</v-btn>
             </v-form>
+            <div v-if="comment">{{ comment }}</div>
           </v-card-text>
         </v-card>
       </v-col>
@@ -24,21 +23,16 @@
 export default {
   data () {
     return {
-      name: "",
-      email: "",
-      date: new Date(),
-      time: new Date(),
-      partySize: 1,
-      specialRequests: "",
-    };
+      comment:''
+    }
   },
   methods: {
     submitReservation () {
       // Add your review submission logic here
       console.log("Review submitted!");
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>

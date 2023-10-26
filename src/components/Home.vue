@@ -12,13 +12,11 @@
           <!-- Series Image -->
           <v-carousel class="max-height-carousel">
             <v-carousel-item
-              v-for="(series,i) in series"
-              :key="i"
-              :src="series.image"
-              reverse-transition="fade-transition"
-              transition="fade-transition"
-              max-height="350px"
-            ></v-carousel-item>
+              v-for="item in series.items"
+              :key="item.name">
+            <v-img :src="item.imageUrl"
+              max-height="350px"></v-img>
+            </v-carousel-item>
           </v-carousel>
           <v-card-title class="headline">
             {{ series.name }}
@@ -46,33 +44,33 @@ export default {
       series: [
         {
           name: "Legend Of Fei",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for Series 1",
         },
         {
           name: "Till THe End Of The Moon",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for series 2",
         },
         {
           name: "Immortal Samsara",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for Series 3",
         },
         {
           name: "Hidden Love",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for Series 4",
         },
         {
           name: "Gen Z",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for Series 5",
         },
 
         {
           name: "Princess Agents",
-          imageUrl: "@/assets/legengoffei.png",
+          imageUrl: require("@/assets/2.jpg"),
           description: "Description for Series 6",
         },
         // Add more series as needed

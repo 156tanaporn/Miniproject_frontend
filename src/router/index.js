@@ -32,7 +32,13 @@ const routes = [
     path: '/series',
     name: 'series',
     component: () => import('../views/SeriesView.vue')
+  },
+  {
+    path: '/table',
+    name: 'table',
+    component: () => import('../views/TableView.vue')
   }
+
 ]
 
 const router = new VueRouter({
